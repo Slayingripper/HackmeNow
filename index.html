@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/hacker.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HackmeNow - Hacking Simulation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&family=Source+Code+Pro:wght@300;400;500;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="app">
+      <!-- Boot screen -->
+      <div id="boot-screen" class="boot-screen">
+        <div class="boot-content">
+          <div class="ascii-art">
+            <pre id="ascii-text"></pre>
+          </div>
+          <div class="boot-progress">
+            <div class="progress-bar" id="boot-progress"></div>
+          </div>
+          <div class="boot-messages" id="boot-messages"></div>
+        </div>
+      </div>
+
+      <!-- Main game interface -->
+      <div id="game-interface" class="game-interface hidden">
+        <!-- Top menu bar -->
+        <div class="menu-bar">
+          <div class="menu-logo">
+            <i class="fas fa-skull"></i>
+            <span>HackmeNow v2.4.7</span>
+          </div>
+          <div class="menu-status">
+            <span class="status-item">
+              <i class="fas fa-wifi"></i>
+              <span id="connection-status">Connected</span>
+            </span>
+            <span class="status-item">
+              <i class="fas fa-shield-alt"></i>
+              <span id="security-level">STEALTH</span>
+            </span>
+            <span class="status-item">
+              <i class="fas fa-clock"></i>
+              <span id="system-time"></span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Desktop workspace -->
+        <div class="desktop-workspace">
+          <!-- Terminal window -->
+          <div class="window terminal-window" id="terminal-window">
+            <div class="window-header">
+              <div class="window-controls">
+                <span class="control minimize"></span>
+                <span class="control maximize"></span>
+                <span class="control close"></span>
+              </div>
+              <div class="window-title">
+                <i class="fas fa-terminal"></i>
+                Terminal - root@blackhat
+              </div>
+            </div>
+            <div class="window-content">
+              <div id="terminal" class="terminal"></div>
+            </div>
+          </div>
+
+          <!-- Wireshark-like packet analyzer -->
+          <div class="window wireshark-window hidden" id="wireshark-window">
+            <div class="window-header">
+              <div class="window-controls">
+                <span class="control minimize"></span>
+                <span class="control maximize"></span>
+                <span class="control close"></span>
+              </div>
+              <div class="window-title">
+                <i class="fas fa-network-wired"></i>
+                PacketSniffer Pro
+              </div>
+            </div>
+            <div class="window-content">
+              <div class="wireshark-toolbar">
+                <button class="btn-start-capture" id="start-capture">
+                  <i class="fas fa-play"></i> Start Capture
+                </button>
+                <button class="btn-stop-capture" id="stop-capture" disabled>
+                  <i class="fas fa-stop"></i> Stop
+                </button>
+                <select id="interface-select">
+                  <option value="eth0">eth0 - Home Network</option>
+                  <option value="wlan0">wlan0 - WiFi Interface</option>
+                </select>
+              </div>
+              <div class="packet-list" id="packet-list"></div>
+              <div class="packet-details" id="packet-details"></div>
+            </div>
+          </div>
+
+          <!-- Network monitoring dashboard -->
+          <div class="window network-window hidden" id="network-window">
+            <div class="window-header">
+              <div class="window-controls">
+                <span class="control minimize"></span>
+                <span class="control maximize"></span>
+                <span class="control close"></span>
+              </div>
+              <div class="window-title">
+                <i class="fas fa-chart-line"></i>
+                Network Monitor
+              </div>
+            </div>
+            <div class="window-content">
+              <div class="network-stats">
+                <div class="stat-card">
+                  <h3>Active Connections</h3>
+                  <span class="stat-value" id="active-connections">0</span>
+                </div>
+                <div class="stat-card">
+                  <h3>Data Captured</h3>
+                  <span class="stat-value" id="data-captured">0 MB</span>
+                </div>
+                <div class="stat-card">
+                  <h3>Vulnerabilities</h3>
+                  <span class="stat-value" id="vulnerabilities">0</span>
+                </div>
+              </div>
+              <canvas id="network-chart"></canvas>
+            </div>
+          </div>
+
+          <!-- File explorer -->
+          <div class="window explorer-window hidden" id="explorer-window">
+            <div class="window-header">
+              <div class="window-controls">
+                <span class="control minimize"></span>
+                <span class="control maximize"></span>
+                <span class="control close"></span>
+              </div>
+              <div class="window-title">
+                <i class="fas fa-folder"></i>
+                Infiltrator Explorer
+              </div>
+            </div>
+            <div class="window-content">
+              <div class="explorer-sidebar">
+                <div class="sidebar-section">
+                  <h4>Target Systems</h4>
+                  <ul id="target-list">
+                    <li><i class="fas fa-laptop"></i> John's Laptop</li>
+                    <li><i class="fas fa-mobile-alt"></i> Sarah's Phone</li>
+                    <li><i class="fas fa-tv"></i> Smart TV</li>
+                    <li><i class="fas fa-camera"></i> Security Camera</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="explorer-main" id="explorer-content">
+                <!-- Dynamic content -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Mission objectives panel -->
+          <div class="mission-panel" id="mission-panel">
+            <div class="mission-header">
+              <h3><i class="fas fa-crosshairs"></i> Mission Objectives</h3>
+              <button class="minimize-btn" id="minimize-mission">
+                <i class="fas fa-minus"></i>
+              </button>
+            </div>
+            <div class="mission-content" id="mission-content">
+              <div class="objective" id="obj-1">
+                <i class="fas fa-circle-notch"></i>
+                <span>Establish persistent connection to target network</span>
+              </div>
+              <div class="objective" id="obj-2">
+                <i class="fas fa-circle"></i>
+                <span>Monitor network traffic for credentials</span>
+              </div>
+              <div class="objective" id="obj-3">
+                <i class="fas fa-circle"></i>
+                <span>Gain access to IoT devices</span>
+              </div>
+              <div class="objective" id="obj-4">
+                <i class="fas fa-circle"></i>
+                <span>Extract banking information</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chat/messaging system -->
+        <div class="messaging-panel hidden" id="messaging-panel">
+          <div class="messages" id="messages-container"></div>
+          <div class="typing-indicator" id="typing-indicator"></div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
