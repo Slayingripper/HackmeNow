@@ -368,28 +368,6 @@ By completing this walkthrough, you will understand:
 - Ethical hacking guidelines
 - Professional cybersecurity conduct
 
-## ⚖️ Important Reminders
-
-### Educational Purpose Only
-This simulation is designed for:
-- ✅ Learning cybersecurity concepts
-- ✅ Understanding attack methodologies
-- ✅ Developing defensive strategies
-- ✅ Ethical hacking education
-
-### Real-World Application
-**NEVER** use these techniques on systems you don't own or without explicit permission:
-- ❌ Real networks or computers
-- ❌ Production systems
-- ❌ Others' personal devices
-- ❌ Corporate infrastructure
-
-### Legal Considerations
-- Always obtain written permission before testing
-- Follow responsible disclosure practices
-- Respect privacy and data protection laws
-- Use knowledge for defensive purposes
-
 ## 🚀 Next Steps
 
 After completing this walkthrough:
