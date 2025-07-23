@@ -1,5 +1,7 @@
 # HackmeNow - Hacking Simulation Game
 
+![HackmeNow Screenshot](Pics/main.png)
+
 A realistic web-based hacking simulation game that follows the story of a cybercriminal who has gained access to a home network via trojan malware. Experience the thrill of ethical hacking through an immersive browser-based interface.
 
 **Pure HTML/CSS/JavaScript version - No server required!**
@@ -22,6 +24,8 @@ HackmeNow is an educational cybersecurity simulation that teaches penetration te
 **IMPORTANT**: This is a simulation for educational purposes only. All hacking activities are simulated and do not involve real systems, networks, or data. The game is designed to teach cybersecurity concepts in a safe, controlled environment.
 
 ## 🚀 Quick Start
+
+![HackmeNow Screenshot](Pics/screen2.png)
 
 ### Option 1: Local Development
 ```bash
