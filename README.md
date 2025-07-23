@@ -184,11 +184,6 @@ Visit `http://localhost:8080` to play the game.
 ### File Structure
 ```
 HackmeNow/
-├── index.html              # Main game interface
-├── package.json            # Dependencies and scripts
-### File Structure
-```
-HackmeNow/
 ├── index.html             # Main game interface
 ├── package.json           # Project metadata (minimal)
 ├── deploy-simple.sh       # Deployment script
@@ -206,6 +201,7 @@ HackmeNow/
 │       └── WindowManager.js   # Window management
 └── public/
     └── vite.svg           # Icon assets
+
 ```
 
 ## 🔧 Development
@@ -313,5 +309,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - [Metasploit](https://www.metasploit.com/) - Penetration testing framework
 
 ---
-
-**Remember: With great power comes great responsibility. Use your cybersecurity knowledge ethically and legally.**
