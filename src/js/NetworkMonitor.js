@@ -1,7 +1,7 @@
 /**
- * NetworkMonitor - Real-time network activity visualization and statistics
+ * NetworkMonitor - Real-time network monitoring and visualization
  */
-export class NetworkMonitor {
+class NetworkMonitor {
   constructor() {
     this.window = document.getElementById('network-window');
     this.activeConnectionsEl = document.getElementById('active-connections');

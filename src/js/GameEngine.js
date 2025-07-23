@@ -1,14 +1,7 @@
-import { Terminal } from './Terminal.js';
-import { WiresharkSimulator } from './WiresharkSimulator.js';
-import { NetworkMonitor } from './NetworkMonitor.js';
-import { FileExplorer } from './FileExplorer.js';
-import { StorylineManager } from './StorylineManager.js';
-import { WindowManager } from './WindowManager.js';
-
 /**
  * GameEngine - Main game controller and state management
  */
-export class GameEngine {
+class GameEngine {
   constructor() {
     this.gameInterface = document.getElementById('game-interface');
     this.missionPanel = document.getElementById('mission-panel');

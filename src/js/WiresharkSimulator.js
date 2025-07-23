@@ -1,7 +1,7 @@
 /**
- * WiresharkSimulator - Network packet capture and analysis interface
+ * WiresharkSimulator - Simulates network packet capture and analysis
  */
-export class WiresharkSimulator {
+class WiresharkSimulator {
   constructor() {
     this.window = document.getElementById('wireshark-window');
     this.startButton = document.getElementById('start-capture');

@@ -1,21 +1,14 @@
 {
   "name": "hackmenow",
-  "private": true,
   "version": "1.0.0",
-  "type": "module",
-  "description": "A realistic web-based hacking simulation game",
+  "description": "A realistic web-based hacking simulation game - Pure HTML/CSS/JS version",
   "scripts": {
-    "dev": "vite --host 0.0.0.0",
-    "build": "vite build",
-    "preview": "vite preview --host 0.0.0.0",
-    "serve": "python3 -m http.server 8080"
+    "serve": "python3 -m http.server 8080",
+    "deploy": "./deploy-simple.sh"
   },
-  "devDependencies": {
-    "vite": "^5.4.0"
-  },
-  "dependencies": {
-    "crypto-js": "^4.2.0",
-    "chart.js": "^4.4.0",
-    "highlight.js": "^11.9.0"
-  }
+  "dependencies": {},
+  "devDependencies": {},
+  "keywords": ["hacking", "simulation", "game", "cybersecurity", "education"],
+  "author": "Your Name",
+  "license": "MIT"
 }

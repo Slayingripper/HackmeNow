@@ -1,7 +1,7 @@
 /**
- * Terminal - Realistic terminal emulator with command processing
+ * Terminal - Simulates a hacker terminal with various commands
  */
-export class Terminal {
+class Terminal {
   constructor() {
     this.terminalElement = document.getElementById('terminal');
     this.currentLine = '';

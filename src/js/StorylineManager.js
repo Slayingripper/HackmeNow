@@ -1,7 +1,7 @@
 /**
- * StorylineManager - Handles game progression and narrative elements
+ * StorylineManager - Manages game progression and narrative
  */
-export class StorylineManager {
+class StorylineManager {
   constructor() {
     this.currentMission = 0;
     this.currentScene = 0;

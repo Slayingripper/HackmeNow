@@ -1,7 +1,7 @@
 /**
- * WindowManager - Handles window dragging, resizing, and z-index management
+ * WindowManager - Manages draggable windows and UI components
  */
-export class WindowManager {
+class WindowManager {
   constructor() {
     this.windows = [];
     this.draggedWindow = null;

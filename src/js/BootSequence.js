@@ -1,7 +1,7 @@
 /**
  * BootSequence - Handles the initial boot screen with ASCII art and loading
  */
-export class BootSequence {
+class BootSequence {
   constructor() {
     this.bootScreen = document.getElementById('boot-screen');
     this.asciiText = document.getElementById('ascii-text');

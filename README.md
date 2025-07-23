@@ -2,6 +2,8 @@
 
 A realistic web-based hacking simulation game that follows the story of a cybercriminal who has gained access to a home network via trojan malware. Experience the thrill of ethical hacking through an immersive browser-based interface.
 
+**Pure HTML/CSS/JavaScript version - No server required!**
+
 ## 🎮 Game Overview
 
 HackmeNow is an educational cybersecurity simulation that teaches penetration testing concepts through an engaging storyline. Players take on the role of a hacker who has infiltrated a home network and must:
@@ -18,6 +20,31 @@ HackmeNow is an educational cybersecurity simulation that teaches penetration te
 ## 🛡️ Educational Purpose
 
 **IMPORTANT**: This is a simulation for educational purposes only. All hacking activities are simulated and do not involve real systems, networks, or data. The game is designed to teach cybersecurity concepts in a safe, controlled environment.
+
+## 🚀 Quick Start
+
+### Option 1: Local Development
+```bash
+# Clone the repository
+git clone https://github.com/Slayingripper/HackmeNow.git
+cd HackmeNow
+
+# Start a local web server (Python 3)
+python3 -m http.server 8080
+
+# Or use the npm script
+npm run serve
+```
+
+Visit `http://localhost:8080` to play the game.
+
+### Option 2: Deploy to Web Hosting
+1. Run the deployment script:
+   ```bash
+   ./deploy-simple.sh
+   ```
+2. Upload the contents of `hackmenow-simple/` to your web hosting
+3. Visit your domain to play!
 
 ## 🎯 Features
 
@@ -50,10 +77,9 @@ HackmeNow is an educational cybersecurity simulation that teaches penetration te
 
 ### Prerequisites
 - Modern web browser (Chrome, Firefox, Safari, Edge)
-- Node.js (v16+ recommended)
-- npm or yarn package manager
+- Web server (Python, Apache, Nginx) or any web hosting service
 
-### Installation
+### Local Setup
 
 1. **Clone the repository**
    ```bash
@@ -61,27 +87,34 @@ HackmeNow is an educational cybersecurity simulation that teaches penetration te
    cd HackmeNow
    ```
 
-2. **Install dependencies**
+2. **Start a local web server**
    ```bash
-   npm install
+   # Using Python 3 (recommended)
+   python3 -m http.server 8080
+   
+   # Or using npm script
+   npm run serve
    ```
 
-3. **Start the development server**
-   ```bash
-   npm run dev
-   ```
-
-4. **Open the game**
-   - Navigate to `http://localhost:5173` in your browser
+3. **Open the game**
+   - Navigate to `http://localhost:8080` in your browser
    - The game will start with a boot sequence
    - Follow the on-screen instructions to begin
 
-### Alternative Setup (No Build Required)
-If you prefer to run without a build process:
-```bash
-npm run serve
-```
-Then open `http://localhost:8080`
+### Web Hosting Deployment
+1. **Prepare deployment package**
+   ```bash
+   ./deploy-simple.sh
+   ```
+
+2. **Upload to hosting**
+   - Upload contents of `hackmenow-simple/` folder to your web hosting
+   - Or extract `hackmenow-simple-deployment.zip` on your server
+   - Works with any web hosting service (Namecheap, GoDaddy, etc.)
+
+3. **Access your game**
+   - Visit your domain to play
+   - No server configuration required!
 
 ## 🎮 How to Play
 
@@ -130,10 +163,10 @@ Then open `http://localhost:8080`
 ## 🛠️ Technical Architecture
 
 ### Frontend Technologies
-- **Vanilla JavaScript** - Core game logic
-- **HTML5** - Semantic structure
-- **CSS3** - Realistic hacker aesthetics
-- **Vite** - Fast development and building
+- **Vanilla JavaScript** - Core game logic and interactions
+- **HTML5** - Semantic structure and accessibility
+- **CSS3** - Realistic hacker aesthetics and animations
+- **Pure Client-Side** - No server dependencies required
 
 ### Game Components
 - **GameEngine** - Main controller and state management
@@ -149,6 +182,12 @@ Then open `http://localhost:8080`
 HackmeNow/
 ├── index.html              # Main game interface
 ├── package.json            # Dependencies and scripts
+### File Structure
+```
+HackmeNow/
+├── index.html             # Main game interface
+├── package.json           # Project metadata (minimal)
+├── deploy-simple.sh       # Deployment script
 ├── src/
 │   ├── main.js            # Game initialization
 │   ├── style.css          # Hacker-themed styling
@@ -183,6 +222,15 @@ HackmeNow/
 1. Modify `src/style.css` for visual changes
 2. Update `index.html` for structural changes
 3. Edit component files for functionality changes
+
+### Testing Locally
+```bash
+# Start local server
+python3 -m http.server 8080
+
+# Test in browser
+open http://localhost:8080
+```
 
 ## 🎨 Themes and Customization
 

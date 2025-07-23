@@ -1,7 +1,7 @@
 /**
- * FileExplorer - Infiltrator file system and device explorer
+ * FileExplorer - File system browser with hacking context
  */
-export class FileExplorer {
+class FileExplorer {
   constructor() {
     this.window = document.getElementById('explorer-window');
     this.sidebar = this.window.querySelector('.explorer-sidebar');
